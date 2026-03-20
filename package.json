@@ -1,0 +1,40 @@
+{
+  "name": "blame-yourself",
+  "version": "1.0.1",
+  "description": "Show your git authorship stats across an entire repo",
+  "type": "module",
+  "bin": {
+    "blame-yourself": "./bin/blame-yourself.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "logo.svg"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "keywords": [
+    "git",
+    "blame",
+    "stats",
+    "authorship",
+    "cli"
+  ],
+  "author": {
+    "name": "Rakesh Bisht",
+    "url": "https://github.com/raksbisht/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raksbisht/blame-yourself.git"
+  },
+  "homepage": "https://github.com/raksbisht/blame-yourself#readme",
+  "bugs": {
+    "url": "https://github.com/raksbisht/blame-yourself/issues"
+  },
+  "license": "MIT"
+}

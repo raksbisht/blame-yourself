@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#39d353"/>
+      <stop offset="100%" style="stop-color:#26a641"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="100%" style="stop-color:#a371f7"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="200" rx="16" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="100" x2="600" y2="100" stroke="#21262d" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="200" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Left icon area: terminal + person -->
+  <!-- Terminal window frame -->
+  <rect x="30" y="38" width="130" height="124" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Terminal top bar -->
+  <rect x="30" y="38" width="130" height="26" rx="10" fill="#21262d"/>
+  <rect x="30" y="52" width="130" height="12" fill="#21262d"/>
+  <!-- Traffic lights -->
+  <circle cx="50" cy="51" r="5" fill="#ff5f57"/>
+  <circle cx="66" cy="51" r="5" fill="#febc2e"/>
+  <circle cx="82" cy="51" r="5" fill="#28c840"/>
+
+  <!-- Code lines in terminal -->
+  <rect x="44" y="78" width="60" height="5" rx="2.5" fill="#30363d"/>
+  <rect x="44" y="91" width="90" height="5" rx="2.5" fill="#30363d"/>
+  <rect x="44" y="104" width="75" height="5" rx="2.5" fill="#30363d"/>
+  <rect x="44" y="117" width="85" height="5" rx="2.5" fill="#30363d"/>
+  <rect x="44" y="130" width="50" height="5" rx="2.5" fill="#30363d"/>
+
+  <!-- Highlighted lines (your lines) -->
+  <rect x="44" y="78" width="60" height="5" rx="2.5" fill="#39d353" opacity="0.9" filter="url(#glow)"/>
+  <rect x="44" y="104" width="75" height="5" rx="2.5" fill="#39d353" opacity="0.7"/>
+  <rect x="44" y="130" width="50" height="5" rx="2.5" fill="#39d353" opacity="0.5"/>
+
+  <!-- Cursor blink -->
+  <rect x="44" y="143" width="8" height="10" rx="1" fill="#58a6ff" opacity="0.9"/>
+
+  <!-- Curved arrow from terminal pointing to person -->
+  <path d="M 170 100 C 195 60, 215 55, 230 75" stroke="url(#arrowGrad)" stroke-width="2.5" fill="none" stroke-dasharray="6,3" filter="url(#glow)"/>
+  <!-- Arrowhead -->
+  <polygon points="225,68 238,78 224,84" fill="#a371f7" filter="url(#glow)"/>
+
+  <!-- Person silhouette -->
+  <!-- Head -->
+  <circle cx="265" cy="80" r="18" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#glow)"/>
+  <!-- Face highlight -->
+  <circle cx="265" cy="80" r="14" fill="#161b22"/>
+  <!-- Eyes -->
+  <circle cx="259" cy="78" r="2.5" fill="#58a6ff"/>
+  <circle cx="271" cy="78" r="2.5" fill="#58a6ff"/>
+  <!-- Slight smile -->
+  <path d="M 259 85 Q 265 90 271 85" stroke="#58a6ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Body -->
+  <path d="M 240 145 Q 240 115 265 110 Q 290 115 290 145" fill="#21262d" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Shirt highlight -->
+  <path d="M 250 130 Q 265 125 280 130" stroke="#58a6ff" stroke-width="1" fill="none" opacity="0.5"/>
+
+  <!-- Pointing finger back at self -->
+  <line x1="245" y1="118" x2="218" y2="103" stroke="#febc2e" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Finger tip -->
+  <circle cx="215" cy="101" r="4" fill="#febc2e" filter="url(#glow)"/>
+
+  <!-- Divider -->
+  <line x1="310" y1="30" x2="310" y2="170" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- Right: Text -->
+  <!-- $ prompt -->
+  <text x="330" y="80" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="18" fill="#39d353" filter="url(#glow)">$</text>
+
+  <!-- Main title -->
+  <text x="352" y="80" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="28" font-weight="bold" fill="#f0f6fc" letter-spacing="-0.5">blame-yourself</text>
+
+  <!-- Underline accent -->
+  <rect x="352" y="87" width="220" height="2.5" rx="1.5" fill="url(#accentGrad)" opacity="0.8"/>
+
+  <!-- Tagline -->
+  <text x="352" y="115" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#8b949e">How much of this codebase did</text>
+  <text x="352" y="132" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#8b949e">  <tspan fill="#58a6ff" font-weight="bold">you</tspan> actually write?</text>
+
+  <!-- Stats row -->
+  <rect x="352" y="148" width="72" height="22" rx="5" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+  <text x="364" y="163" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#39d353">git blame</text>
+
+  <rect x="432" y="148" width="60" height="22" rx="5" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+  <text x="443" y="163" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#a371f7">node ≥18</text>
+
+  <rect x="500" y="148" width="42" height="22" rx="5" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+  <text x="511" y="163" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#febc2e">MIT</text>
+
+  <!-- Border glow -->
+  <rect width="600" height="200" rx="16" fill="none" stroke="#21262d" stroke-width="1.5"/>
+</svg>
